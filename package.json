@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "rm -rf ./build",
     "start": "tsc && node ./build/index.js && npm run clean",
-    "test": "eslint . && tsc --noEmit && jest"
+    "test": "eslint . && tsc --noEmit && jest",
+    "dev": "tsc-watch --noEmit --onSuccess jest"
   },
   "repository": {
     "type": "git",
@@ -42,6 +43,7 @@
     "jest": "^27.0.4",
     "prettier": "2.2.1",
     "prettier-config-standard": "^4.0.0",
+    "tsc-watch": "^4.5.0",
     "typescript": "^4.3.2"
   }
 }
