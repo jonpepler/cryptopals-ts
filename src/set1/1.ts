@@ -1,8 +1,7 @@
-const hexToBinary = (hex: string): string =>
-  Buffer.from(hex, 'hex').toString('binary')
+export const hexToBinary = (hex: string): Buffer => Buffer.from(hex, 'hex')
 
-const binaryToBase64 = (binary: string): string =>
-  Buffer.from(binary, 'binary').toString('base64')
+export const binaryToBase64 = (binary: Buffer): string =>
+  binary.toString('base64')
 
 export const hexToBase64 = (hex: string): string =>
-  binaryToBase64(hexToBinary(hex))
+  binaryToBase64(hexToBinary(hex)).toString()
