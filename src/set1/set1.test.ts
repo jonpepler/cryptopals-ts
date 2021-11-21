@@ -1,5 +1,7 @@
+/* eslint-disable jest/no-focused-tests */
 import { hexToBase64 } from './1'
 import { xorHex } from './2'
+import { findSingleCharKey } from './3'
 
 it('1', async () => {
   expect(
@@ -16,4 +18,14 @@ it('2', async () => {
       '686974207468652062756c6c277320657965'
     )
   ).toEqual('746865206b696420646f6e277420706c6179')
+})
+
+describe('3', () => {
+  it('finds the key', () => {
+    expect(
+      findSingleCharKey(
+        '1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736'
+      )
+    ).toEqual('X')
+  })
 })
